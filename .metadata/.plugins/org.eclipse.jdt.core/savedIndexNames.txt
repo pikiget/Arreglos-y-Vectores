@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+E:\ZZZCURSOS\JAVA\5. Arreglos o Vectores\SOLUCION\.metadata\.plugins\org.eclipse.jdt.core
+1151848521.index
+875115734.index
+1865797976.index

@@ -1,0 +1,37 @@
+package gui;
+
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class Ejercicio_1 extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Ejercicio_1 frame = new Ejercicio_1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+/*EJERCICIO N°1: Leer 5 números, guardarlos en un arreglo y mostrarlos en el mismo orden introducido*/
+
+	public Ejercicio_1() {
+		int LeerN;
+		
+		for (int i = 0; i <= 5; i++ ) {
+			LeerN = Integer.parseInt(JOptionPane.showInputDialog("digite su N°" + i ));
+		}
+	}
+
+}

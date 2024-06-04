@@ -1,0 +1,73 @@
+package gui;
+
+import java.awt.EventQueue;
+import java.util.Scanner;
+
+import javax.swing.JFrame;
+
+public class Ejercicio_3 extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Ejercicio_3 frame = new Ejercicio_3();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/*Leer 5 números por teclado, almacenarlos en un arreglo y 
+	 *a continuación realizar la media de los números positivos,
+	 *la media de los negativos y contar el número de ceros*/
+	public Ejercicio_3() {
+		Scanner entrada = new Scanner(System.in);
+		
+		int[] numero = new int [5];
+		int sumaPosi = 0;
+		int sumaNega = 0;
+		
+		int cantPosi = 0;
+		int cantNega = 0;
+		
+		int cantCero = 0;
+		
+		System.out.println("Guardar los números en un arreglo");
+		
+		for(int i=0; i<5; i++) {
+			System.out.println((i+1)+". Dijite su número");
+			numero[i] = entrada.nextInt();
+
+			if(numero[i]>0) {
+				sumaPosi =+ numero[i];
+				cantPosi++;
+			}
+			else if(numero[i]<0){
+				sumaNega =+ numero[i];
+				cantNega++;
+			}
+			else {
+				cantCero ++;
+			}
+			
+		}
+		
+		double mediaPosi = cantPosi > 0 ? (double) sumaPosi/cantPosi : 0;
+		double mediaNega = cantNega > 0 ? (double) sumaNega/cantNega : 0;
+        // Mostrar resultados
+        System.out.println("Media de los números positivos: " + mediaPosi);
+        System.out.println("Media de los números negativos: " + mediaNega);
+        System.out.println("Cantidad de ceros: " + cantCero);
+		
+	}
+
+}

@@ -1,0 +1,65 @@
+package gui;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+public class prueba extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					prueba frame = new prueba();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+/*Composición 
+  en el paradigma de la programación orientada a objetos. 
+  En Java, y en la mayoría de los lenguajes de programación orientados a objetos, 
+  puedes tener objetos dentro de otros objetos. 
+  */
+	class Pasajero{
+		String nombre;
+		String numeroPasajero;
+	}
+	class Vuelo{
+		int numeroVuelo;
+		String destino;
+	}
+	class Reserva{
+		Pasajero pasajero;
+		Vuelo vuelo;
+	}
+	
+	public class Main{
+		public static void main(String[] args) {
+			Pasajero pasajero = new Pasajero();
+			pasajero.nombre = "Juan";
+			pasajero.numeroPasajero = "ABC123";
+		
+			Vuelo vuelo = new Vuelo();
+			vuelo.destino = "Miami";
+			vuelo.numeroVuelo = 123;
+			
+			Reserva reserva = new Reserva();
+			reserva.pasajero = pasajero;
+			reserva.vuelo = vuelo;
+			
+			System.out.println("Reserva de " + reserva.pasajero.nombre + " para el vuelo número" + reserva.vuelo.numeroVuelo);
+		}
+	}
+
+}
